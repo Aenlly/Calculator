@@ -2,30 +2,35 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:layout_marginLeft="15dp"
     android:layout_marginTop="30dp">
     <RadioGroup
+        android:id="@+id/rdg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         >
         <RadioButton
+            android:id="@+id/four"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:checked="true"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:text="四人打"/>
         <RadioButton
+            android:id="@+id/tree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:text="三人打"/>
     </RadioGroup>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -33,6 +38,7 @@
             android:textSize="18sp"
             android:text="打多大:"/>
         <EditText
+            android:id="@+id/daduoda"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
@@ -45,9 +51,12 @@
             android:textSize="18sp"
             android:text="元/胡"/>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -83,6 +92,50 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:text="拖鸟"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/tuo1"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="0" />
+
+        <EditText
+            android:id="@+id/tuo2"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="0" />
+
+        <EditText
+            android:id="@+id/tuo3"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="0" />
+
+        <EditText
+            android:id="@+id/tuo4"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="0" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -91,24 +144,127 @@
             android:layout_marginRight="50dp"
             android:text="活鸟"/>
         <EditText
-            android:layout_width="0dp"
+            android:id="@+id/huo1"
+            android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:text="0"/>
         <EditText
-            android:layout_width="0dp"
+            android:id="@+id/huo2"
+            android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:text="0"/>
         <EditText
-            android:layout_width="0dp"
+            android:id="@+id/huo3"
+            android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:text="0"/>
         <EditText
-            android:layout_width="0dp"
+            android:id="@+id/huo4"
+            android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:text="0"/>
     </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginRight="50dp"
+            android:text="胡息"/>
+        <EditText
+            android:id="@+id/xi1"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="0"/>
+        <EditText
+            android:id="@+id/xi2"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="0"/>
+        <EditText
+            android:id="@+id/xi3"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="0"/>
+        <EditText
+            android:id="@+id/xi4"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="0"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginRight="50dp"
+            android:text="结果"/>
+        <EditText
+            android:id="@+id/guo1"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+
+            android:text="0"/>
+        <EditText
+            android:id="@+id/guo2"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="0"/>
+        <EditText
+            android:id="@+id/guo3"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="0"/>
+        <EditText
+            android:id="@+id/guo4"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="0"/>
+    </LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <Button
+        android:id="@+id/jisuan"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="计算"/>
+    <Button
+        android:id="@+id/qingchu"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="清除"/>
+    <Button
+        android:id="@+id/tuichu"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="退出"/>
+</LinearLayout>
 </LinearLayout>
