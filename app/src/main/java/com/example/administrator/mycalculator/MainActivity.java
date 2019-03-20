@@ -10,101 +10,101 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView ding_view;//
-    private int renshu=4;//人数
 
+    private RadioGroup rbg;
+    private RadioButton three;
+    private EditText editText[][]=new EditText[4][4];
+    private int renshu=4;
+    private int jieguo[]={0,0,0,0};
+    private Button btn_tc,btn_qc,btn_js;
+
+    private double caitou=0.5;
     @Override
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calculator);
+        findBy();
 
-        final RadioGroup rdg=(RadioGroup)findViewById(R.id.rdg);//单选按钮组
-
-        final RadioButton four=(RadioButton)findViewById(R.id.tree);//单选按钮
-
-        final EditText caitou=(EditText)findViewById(R.id.daduoda);
-
-        final EditText huo1 =(EditText)findViewById(R.id.huo1);
-        final EditText huo2 =(EditText)findViewById(R.id.huo2);
-        final EditText huo3 =(EditText)findViewById(R.id.huo3);
-        final EditText huo4 =(EditText)findViewById(R.id.huo4);
-
-        final EditText tuo1 =(EditText)findViewById(R.id.tuo1);
-        final EditText tuo2 =(EditText)findViewById(R.id.tuo2);
-        final EditText tuo3 =(EditText)findViewById(R.id.tuo3);
-        final EditText tuo4 =(EditText)findViewById(R.id.tuo4);
-
-        final EditText xi1 =(EditText)findViewById(R.id.xi1);
-        final EditText xi2 =(EditText)findViewById(R.id.xi2);
-        final EditText xi3 =(EditText)findViewById(R.id.xi3);
-        final EditText xi4 =(EditText)findViewById(R.id.xi4);
-
-        final EditText guo1=(EditText)findViewById(R.id.guo1);
-        final EditText guo2=(EditText)findViewById(R.id.guo2);
-        final EditText guo3=(EditText)findViewById(R.id.guo3);
-        final EditText guo4=(EditText)findViewById(R.id.guo4);
-
-
-        final Button but_js=(Button)findViewById(R.id.jisuan);
-        final Button but_qc=(Button)findViewById(R.id.qingchu);
-        final Button but_tc=(Button)findViewById(R.id.tuichu);
-
-        but_qc.setOnClickListener(new View.OnClickListener() {
+       btn_qc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                for (int i=0;i<4;i++) {
-                    huo1.setText("0");
-                    huo2.setText("0");
-                    huo3.setText("0");
-                    huo4.setText("0");
-
-                    tuo1.setText("0");
-                    tuo2.setText("0");
-                    tuo3.setText("0");
-                    tuo4.setText("0");
-
-
-                    xi1.setText("0");
-                    xi2.setText("0");
-                    xi3.setText("0");
-                    xi4.setText("0");
-
-                    guo1.setText("0");
-                    guo2.setText("0");
-                    guo3.setText("0");
-                    guo4.setText("0");
-
-                    caitou.setText("0.5");
+                for (int i=0;i<4;i++){
+                    for (int j=0;j<4;j++){
+                        editText[i][j].setText("0");
+                    }
                 }
             }
         });
 
-        but_tc.setOnClickListener(new View.OnClickListener() {
+        btn_tc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 System.exit(0);
             }
         });
 
-        rdg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        rbg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId==R.id.tree) {
-                    tuo4.setEnabled(false);
-                    huo4.setEnabled(false);
-                    xi4.setEnabled(false);
-                    tuo4.setText("");
-                    huo4.setText("");
-                    xi4.setText("");
+                if (checkedId==three.getId()) {
+                    for (int i=0;i<3;i++) {
+                        editText[3][i].setText("0");
+                        editText[3][i].setEnabled(false);
+                    }
+                    renshu=3;
                 }
-                else
-                {
-                    tuo4.setEnabled(true);
-                    huo4.setEnabled(true);
-                    xi4.setEnabled(true);
+                else{
+                    for (int i=0;i<3;i++) {
+                        editText[3][i].setEnabled(true);
+                    }
+                    renshu=4;
                 }
+
             }
         });
+        btn_js.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+    }
+    public void findBy(){
+
+        rbg=(RadioGroup)findViewById(R.id.rdg);
+
+        three=(RadioButton)findViewById(R.id.tree);
+
+      /*  EditText daduoshao = (EditText) findViewById(R.id.daduoda);
+        */
+        editText[0][0] = (EditText) findViewById(R.id.huo1);
+        editText[1][0] = (EditText) findViewById(R.id.huo2);
+        editText[2][0] = (EditText) findViewById(R.id.huo3);
+        editText[3][0] = (EditText) findViewById(R.id.huo4);
+
+
+        editText[0][1] = (EditText) findViewById(R.id.tuo1);
+        editText[1][1] = (EditText) findViewById(R.id.tuo2);
+        editText[2][1] = (EditText) findViewById(R.id.tuo3);
+        editText[3][1] = (EditText) findViewById(R.id.tuo4);
+
+
+        editText[0][2] = (EditText) findViewById(R.id.xi1);
+        editText[1][2] = (EditText) findViewById(R.id.xi2);
+        editText[2][2] = (EditText) findViewById(R.id.xi3);
+        editText[3][2] = (EditText) findViewById(R.id.xi4);
+
+
+        editText[0][3] = (EditText) findViewById(R.id.guo1);
+        editText[1][3] = (EditText) findViewById(R.id.guo2);
+        editText[2][3] = (EditText) findViewById(R.id.guo3);
+        editText[3][3] = (EditText) findViewById(R.id.guo4);
+
+
+        btn_js = (Button) findViewById(R.id.jisuan);
+        btn_qc = (Button) findViewById(R.id.qingchu);
+        btn_tc = (Button) findViewById(R.id.tuichu);
     }
 }

@@ -13,6 +13,7 @@
         >
         <RadioButton
             android:id="@+id/four"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:checked="true"
@@ -225,26 +226,25 @@
             android:id="@+id/guo1"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
-
+            android:enabled="false"
             android:text="0"/>
         <EditText
             android:id="@+id/guo2"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:inputType="number"
+            android:enabled="false"
             android:text="0"/>
         <EditText
             android:id="@+id/guo3"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:inputType="number"
+            android:enabled="false"
             android:text="0"/>
         <EditText
             android:id="@+id/guo4"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:inputType="number"
+            android:enabled="false"
             android:text="0"/>
     </LinearLayout>
 <LinearLayout
